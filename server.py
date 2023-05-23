@@ -4,13 +4,13 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-authenticator = IAMAuthenticator('Mz2537RTtqOWaQPTzs5OiRjpaZMdMVtCzOsBFSpluxpP')
+authenticator = IAMAuthenticator('ocult')
 language_translator = LanguageTranslatorV3(
     version='2018-05-01',
     authenticator=authenticator
 )
 
-language_translator.set_service_url('https://api.us-south.language-translator.watson.cloud.ibm.com/instances/c21cfa78-652b-4ed7-b6ff-0b3315ac7310')
+language_translator.set_service_url('ocult')
 
 @app.route('/translate/english-to-french', methods=['POST'])
 def translate_english_to_french():
